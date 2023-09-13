@@ -9,6 +9,7 @@
     else{
         $name = "alteracaoembarcacaoinsert";
         $valor = 0;
+        $resultado = null;
     }   
 ?>
     <div class="container-scroller">
@@ -44,19 +45,19 @@
                     <form class="forms-sample" method="post">
                       <div class="form-group">
                         <label for="exampleInputName1">Nome da embarcação</label>
-                        <input type="text" class="form-control" id="nome" name="nome" value="<?php echo ($resultado[0]['nome']); ?>" placeholder="Nome da embarcação">
+                        <input type="text" class="form-control" id="nome" name="nome" value="<?php if(isset($resultado)){ echo ($resultado[0]['nome']);} ?>" placeholder="Nome da embarcação">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail3">Capacidade</label>
-                        <input type="number" class="form-control" id="capacidade" name="capacidade" value="<?php echo ($resultado[0]['capacidade']); ?>" placeholder="Capacidade de tripulantes">
+                        <input type="number" class="form-control" id="capacidade" name="capacidade" value="<?php if(isset($resultado)){  echo ($resultado[0]['capacidade']);} ?>" placeholder="Capacidade de tripulantes">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword4">Data da ultima revisão</label>
-                        <input type="datetime-local" class="form-control" id="revisao"  value="<?php echo ($resultado[0]['revisao']); ?>" name="revisao">
+                        <input type="datetime-local" class="form-control" id="revisao"  value="<?php if(isset($resultado)){  echo ($resultado[0]['revisao']);} ?>" name="revisao">
                       </div>
                       <input type="hidden" name="<?php echo($name); ?>" value="<?php echo($valor); ?>"  />
                       <button type="submit" name="embarcacao" class="btn btn-gradient-primary me-2">Salvar alterações</button>
-                      <a href="embarcacoes.php" class="btn btn-light">Voltar</button>
+                      <a href="embarcacoes_list.php" class="btn btn-light">Voltar</button>
                     </form>
                   </div>
                 </div>

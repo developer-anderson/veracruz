@@ -14,7 +14,7 @@
               <h3 class="page-title">
                 <span class="page-title-icon bg-gradient-primary text-white me-2">
                   <i class="mdi mdi-home"></i>
-                </span> Embarcações
+                </span> Agências
               </h3>
           
             </div>
@@ -23,11 +23,12 @@
               <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
+                  <a href="agencias.php" class="btn btn-gradient-info btn-rounded btn-icon" style="float: right;/* margin-top: -10px; */margin-bottom: 0.75rem;"><i class="mdi mdi-note-plus-outline"></i></a>
                     <div class="clearfix">
                     <?php if (isset($_GET['atualizado'])) {
                         echo '<div class="alert alert-success">Alteração realizada com sucesso!</div>';
                     ?>    <?php } ?>
-                      <h4 class="card-title float-left">Lista de Embarcações</h4>
+                      <h4 class="card-title float-left">Lista de Agências</h4>
                       <div id="visit-sale-chart-legend" class="rounded-legend legend-horizontal legend-top-right float-right"></div>
                     </div>
                     <table class="table table-bordered">
@@ -43,7 +44,7 @@
                       <?php while ($item = $result_agencias->fetch_assoc()) { ?>
                             <tr>
                                 <td><?php echo ($item['id']); ?></td>
-                                <td><a href="agencias.php?updateembarcacao=<?php echo ($item['id']); ?>"><?php echo ($item['nome']); ?></a></td>
+                                <td><a href="agencias.php?updateagencia=<?php echo ($item['id']); ?>"><?php echo ($item['nome']); ?></a></td>
                       
                              </tr>
 

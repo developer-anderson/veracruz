@@ -23,6 +23,8 @@
               <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
+                  <a href="embarcacoes.php" class="btn btn-gradient-info btn-rounded btn-icon" style="float: right;/* margin-top: -10px; */margin-bottom: 0.75rem;"><i class="mdi mdi-note-plus-outline"></i></a>
+
                     <div class="clearfix">
                     <?php if (isset($_GET['atualizado'])) {
                         echo '<div class="alert alert-success">Alteração realizada com sucesso!</div>';

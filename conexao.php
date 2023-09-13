@@ -21,7 +21,7 @@
         header("Location: embarcacoes_list.php?atualizado=true");
         exit();
     }
-    $sql_embarcacoes  = "select * from  agencias where 1=1";
+    $sql_agencias  = "select * from  agencias where 1=1";
     if(isset($_GET['updateagencia'])){
         $sql_agencias .= " and id = ".$_GET['updateagencia'];
     }
