@@ -36,4 +36,54 @@
         header("Location: agencias_list.php?atualizado=true");
         exit();
     }
+
+    $sql_formapagamentos  = "select * from  forma_pagamento where 1=1";
+    if(isset($_GET['updateformapagamento'])){
+        $sql_formapagamentos .= " and id = ".$_GET['updateformapagamento'];
+    }
+    $result_formapagamentos = $db->query($sql_formapagamentos);
+    if(isset($_POST['formapagamento'])){
+        $query = (isset($_POST['alteracaoformapagamentoupdate']) ? 'update' : 'insert into' );
+        $id = (isset($_POST['alteracaoformapagamentoupdate']) ? $_POST['alteracaoformapagamentoupdate'] : 0 );
+        $condidions = (isset($_POST['alteracaoformapagamentoupdate']) ? "where id = $id" : '' );
+        $sql = "$query  forma_pagamento set nome = '".$_POST['nome']."' $condidions";
+     
+        $db->query($sql);
+        header("Location: formas_pagamentos_list.php?atualizado=true");
+        exit();
+    }
+
+
+    $sql_comandantes  = "select * from  comandantes where 1=1";
+    if(isset($_GET['updatecomandante'])){
+        $sql_comandantes .= " and id = ".$_GET['updatecomandante'];
+    }
+    $result_comandantes = $db->query($sql_comandantes);
+    if(isset($_POST['comandante'])){
+        $query = (isset($_POST['alteracaocomandanteupdate']) ? 'update' : 'insert into' );
+        $id = (isset($_POST['alteracaocomandanteupdate']) ? $_POST['alteracaocomandanteupdate'] : 0 );
+        $condidions = (isset($_POST['alteracaocomandanteupdate']) ? "where id = $id" : '' );
+        $sql = "$query  comandantes set nome = '".$_POST['nome']."' $condidions";
+     
+        $db->query($sql);
+        header("Location: comandantes_list.php?atualizado=true");
+        exit();
+    }
+
+    
+    $sql_servicos  = "select * from  servicos where 1=1";
+    if(isset($_GET['updateservico'])){
+        $sql_servicos .= " and id = ".$_GET['updateservico'];
+    }
+    $result_servicos = $db->query($sql_servicos);
+    if(isset($_POST['servico'])){
+        $query = (isset($_POST['alteracaoservicoupdate']) ? 'update' : 'insert into' );
+        $id = (isset($_POST['alteracaoservicoupdate']) ? $_POST['alteracaoservicoupdate'] : 0 );
+        $condidions = (isset($_POST['alteracaoservicoupdate']) ? "where id = $id" : '' );
+        $sql = "$query  servicos set nome = '".$_POST['nome']."' $condidions";
+     
+        $db->query($sql);
+        header("Location: servicos_list.php?atualizado=true");
+        exit();
+    }
 ?>

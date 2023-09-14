@@ -1,13 +1,13 @@
 <?php 
     require_once('partials/_header.php');
-    if(isset($_GET['updateagencia']))
+    if(isset($_GET['updateformapagamento']))
     {
-        $name = "alteracaoagenciaupdate";
-        $valor = $_GET['updateagencia'];
-        $resultado = $result_agencias->fetch_all(MYSQLI_ASSOC);
+        $name = "alteracaoformapagamentoupdate";
+        $valor = $_GET['updateformapagamento'];
+        $resultado = $result_formapagamentos->fetch_all(MYSQLI_ASSOC);
     } 
     else{
-        $name = "alteracaoagenciainsert";
+        $name = "alteracaoformapagamentoinsert";
         $valor = 0;
         $resultado = null;
     }   
@@ -27,7 +27,7 @@
               <h3 class="page-title">
                 <span class="page-title-icon bg-gradient-primary text-white me-2">
                   <i class="mdi mdi-home"></i>
-                </span> Agências
+                </span> Pagamento
               </h3>
           
             </div>
@@ -44,13 +44,13 @@
                     </div>
                     <form class="forms-sample" method="post">
                       <div class="form-group">
-                        <label for="exampleInputName1">Nome da agência</label>
-                        <input type="text" class="form-control" id="nome" name="nome" value="<?php if(isset($resultado)){ echo ($resultado[0]['nome']);}  ?>" placeholder="Nome da agência">
+                        <label for="exampleInputName1">Nome</label>
+                        <input type="text" class="form-control" id="nome" name="nome" value="<?php if(isset($resultado)){ echo ($resultado[0]['nome']);}  ?>" placeholder="Nome">
                       </div>
             
                       <input type="hidden" name="<?php echo($name); ?>" value="<?php echo($valor); ?>"  />
-                      <button type="submit" name="agencia" class="btn btn-gradient-primary me-2">Salvar alterações</button>
-                      <a href="agencias_list.php" class="btn btn-light">Voltar</button>
+                      <button type="submit" name="formapagamento" class="btn btn-gradient-primary me-2">Salvar alterações</button>
+                      <a href="formas_pagamentos_list.php" class="btn btn-light">Voltar</button>
                     </form>
                   </div>
                 </div>

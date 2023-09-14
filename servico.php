@@ -1,13 +1,13 @@
 <?php 
     require_once('partials/_header.php');
-    if(isset($_GET['updateagencia']))
+    if(isset($_GET['updateservico']))
     {
-        $name = "alteracaoagenciaupdate";
-        $valor = $_GET['updateagencia'];
-        $resultado = $result_agencias->fetch_all(MYSQLI_ASSOC);
+        $name = "alteracaoservicoupdate";
+        $valor = $_GET['updateservico'];
+        $resultado = $result_servicos->fetch_all(MYSQLI_ASSOC);
     } 
     else{
-        $name = "alteracaoagenciainsert";
+        $name = "alteracaoservicoinsert";
         $valor = 0;
         $resultado = null;
     }   
@@ -27,7 +27,7 @@
               <h3 class="page-title">
                 <span class="page-title-icon bg-gradient-primary text-white me-2">
                   <i class="mdi mdi-home"></i>
-                </span> Agências
+                </span> Serviço
               </h3>
           
             </div>
@@ -44,13 +44,13 @@
                     </div>
                     <form class="forms-sample" method="post">
                       <div class="form-group">
-                        <label for="exampleInputName1">Nome da agência</label>
-                        <input type="text" class="form-control" id="nome" name="nome" value="<?php if(isset($resultado)){ echo ($resultado[0]['nome']);}  ?>" placeholder="Nome da agência">
+                        <label for="exampleInputName1">Nome do serviço</label>
+                        <input type="text" class="form-control" id="nome" name="nome" value="<?php if(isset($resultado)){ echo ($resultado[0]['nome']);}  ?>" placeholder="Nome do serviço">
                       </div>
             
                       <input type="hidden" name="<?php echo($name); ?>" value="<?php echo($valor); ?>"  />
-                      <button type="submit" name="agencia" class="btn btn-gradient-primary me-2">Salvar alterações</button>
-                      <a href="agencias_list.php" class="btn btn-light">Voltar</button>
+                      <button type="submit" name="servico" class="btn btn-gradient-primary me-2">Salvar alterações</button>
+                      <a href="servicos_list.php" class="btn btn-light">Voltar</button>
                     </form>
                   </div>
                 </div>
